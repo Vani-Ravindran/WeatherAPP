@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "08c902f4-62c4-4f94-8f8c-5b836b3bb120",
+		"name": "weaher-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Weather-byCity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/weather/city/dubai/AE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"weather",
+						"city",
+						"dubai",
+						"AE"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Weather-byCity-success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/weather/city/ggfd/AE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"weather",
+								"city",
+								"ggfd",
+								"AE"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "openresty"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Jan 2022 18:12:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive, keep-alive"
+						},
+						{
+							"key": "X-Cache-Key",
+							"value": "/data/2.5/weather?APPID=ffa6f13ea40a22452bba3be726315d3f&q=dubai,ae"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "464"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"coord\": {\n        \"lon\": 55.3047,\n        \"lat\": 25.2582\n    },\n    \"weather\": [\n        {\n            \"id\": 800,\n            \"main\": \"Clear\",\n            \"description\": \"clear sky\",\n            \"icon\": \"01n\"\n        }\n    ],\n    \"base\": \"stations\",\n    \"main\": {\n        \"temp\": 293.87,\n        \"feels_like\": 293.38,\n        \"temp_min\": 291.29,\n        \"temp_max\": 296.6,\n        \"pressure\": 1016,\n        \"humidity\": 53\n    },\n    \"visibility\": 10000,\n    \"wind\": {\n        \"speed\": 1.54,\n        \"deg\": 30\n    },\n    \"clouds\": {\n        \"all\": 0\n    },\n    \"dt\": 1643220498,\n    \"sys\": {\n        \"type\": 1,\n        \"id\": 7537,\n        \"country\": \"AE\",\n        \"sunrise\": 1643166245,\n        \"sunset\": 1643205489\n    },\n    \"timezone\": 14400,\n    \"id\": 292223,\n    \"name\": \"Dubai\",\n    \"cod\": 200\n}"
+				},
+				{
+					"name": "Weather-byCity-failcase-invalidcity",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/weather/city/fdfd/AE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"weather",
+								"city",
+								"fdfd",
+								"AE"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Jan 2022 06:07:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"message\": \"404 Not Found: \\\"{\\\"cod\\\":\\\"404\\\",\\\"message\\\":\\\"city not found\\\"}\\\"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Weather-byCoordinates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/weather/51.5098/-0.1180",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"weather",
+						"51.5098",
+						"-0.1180"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Weather-byCoordinates-success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/weather/51.5098/-0.1180",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"weather",
+								"51.5098",
+								"-0.1180"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "openresty"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Jan 2022 18:49:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive, keep-alive"
+						},
+						{
+							"key": "X-Cache-Key",
+							"value": "/data/2.5/weather?lat=51.51&lon=-0.12"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST"
+						},
+						{
+							"key": "Content-Disposition",
+							"value": "inline;filename=f.txt"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "475"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"coord\": {\n        \"lon\": -0.118,\n        \"lat\": 51.5098\n    },\n    \"weather\": [\n        {\n            \"id\": 804,\n            \"main\": \"Clouds\",\n            \"description\": \"overcast clouds\",\n            \"icon\": \"04n\"\n        }\n    ],\n    \"base\": \"stations\",\n    \"main\": {\n        \"temp\": 279.97,\n        \"feels_like\": 276.29,\n        \"temp_min\": 277.19,\n        \"temp_max\": 281.14,\n        \"pressure\": 1031,\n        \"humidity\": 73\n    },\n    \"visibility\": 10000,\n    \"wind\": {\n        \"speed\": 6.17,\n        \"deg\": 250\n    },\n    \"clouds\": {\n        \"all\": 100\n    },\n    \"dt\": 1643222993,\n    \"sys\": {\n        \"type\": 2,\n        \"id\": 2019646,\n        \"country\": \"GB\",\n        \"sunrise\": 1643183255,\n        \"sunset\": 1643215087\n    },\n    \"timezone\": 0,\n    \"id\": 2643743,\n    \"name\": \"London\",\n    \"cod\": 200\n}"
+				},
+				{
+					"name": "Weather-byCoordinates-failcase-invalidValue",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/weather/51.5098/-0.118001jfdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"weather",
+								"51.5098",
+								"-0.118001jfdf"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Disposition",
+							"value": "inline;filename=f.txt"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Jan 2022 06:10:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"BAD_REQUEST\",\n    \"message\": \"400 Bad Request: \\\"{\\\"cod\\\":\\\"400\\\",\\\"message\\\":\\\"wrong longitude\\\"}\\\"\"\n}"
+				}
+			]
+		}
+	]
+}
